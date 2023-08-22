@@ -1,3 +1,4 @@
+/*
 import $ from "jquery";
 const _ = require('lodash');
 
@@ -17,3 +18,4 @@ $(() => {
 
     $("button").on("click", _.debounce(updateCounter));
 });
+*/
