@@ -1,4 +1,3 @@
-/*
 import $ from "jquery";
 const _ = require('lodash');
 
@@ -16,6 +15,5 @@ $(() => {
         para.innerHTML = `${count} clicks on the button`;
     }
 
-    $("button").on("click", _.debounce(updateCounter));
+    $("button").on("click", _.debounce(updateCounter, 300));
 });
-*/
