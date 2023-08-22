@@ -1,5 +1,4 @@
 const path = require('path');
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
     entry: './js/dashboard_main.js',
@@ -10,23 +9,23 @@ module.exports = {
     mode: 'production',
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"]
-            },
-            {
-                test: /\.(ico|gif|png|jpg|jpeg|svg)$/i,
-                use: [
-                    'file-loader',
-					{
-						loader: 'image-webpack-loader',
-						options: {
-							bypassOnDebug: true,
-							disable: true,
-						},
-					},
-                ]
-            },
-        ]
-    },
+          {
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+          },
+          {
+            test: /\.(gif|png|jpe?g|svg)$/i,
+            use: [
+              "file-loader",
+              {
+                loader: "image-webpack-loader",
+                options: {
+                  bypassOnDebug: true,
+                  disable: true,
+                },
+              },
+            ],
+          },
+        ],
+      },
 };
