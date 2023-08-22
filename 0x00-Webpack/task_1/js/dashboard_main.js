@@ -15,5 +15,5 @@ $(() => {
         para.innerHTML = `${count} clicks on the button`;
     }
 
-    _.debounce($("button").on("click", updateCounter));
+    $("button").on("click", _.debounce(updateCounter));
 });
