@@ -1,0 +1,35 @@
+.App-header {
+  display: flex;
+  border-bottom: 2px solid red;
+  height: 30vh;
+}
+
+.App-header h1 {
+  align-self: center;
+  color: red;
+  font-family: sans-serif;
+}
+
+.App-body {
+  border-bottom: 2px solid red;
+  height: 60vh;
+  position: relative;
+  font-family: sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.App-body p {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.App-footer {
+  display: flex;
+  justify-content: space-around;
+  font-style: italic;
+  font-family: sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+}
