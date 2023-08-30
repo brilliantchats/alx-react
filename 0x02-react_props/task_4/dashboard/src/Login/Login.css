@@ -1,0 +1,9 @@
+.App-body {
+    padding: 16px 24px;
+    position: absolute;
+    top: 15rem;
+}
+
+.App-body button {
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.App-header {
+    display: flex;
+    border-bottom: 1px solid crimson;
+    height: 30vh;
+  }
+  .App-header h1 {
+    align-self: center;
+    color: crimson;
+  }
