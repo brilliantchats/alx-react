@@ -1,5 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount } from 'enzyme';
 import App from './App';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
@@ -37,4 +41,26 @@ describe('<App />', () => {
         expect(wrapper.find('CourseList').exists());
 
     });
+});
+
+describe("test when ctrl + h are pressed", () => {
+    it("logOut is called when passed as a prop", () => {
+        const logOut = jest.fn(() => undefined);
+        const wrapper = mount(<App logOut={logOut}/>)
+        const event = new KeyboardEvent("keydown", {ctrlKey: true, key: "h"});
+        document.dispatchEvent(event);
+        expect(logOut).toHaveBeenCalled();
+        wrapper.unmount();
+    });
+    document.alert = jest.fn();
+    it("alert is called when ctrl+h are pressed", () => {
+        const wrapper = mount(<App />);
+        const alert = jest.spyOn(window, 'alert');
+        const event = new KeyboardEvent("keydown", {ctrlKey: true, key: "h"});
+        document.dispatchEvent(event);
+        expect(alert).toHaveBeenCalledWith("Logging you out");
+        jest.restoreAllMocks();
+        wrapper.unmount();
+    });
+    document.alert.mockClear();
 });
