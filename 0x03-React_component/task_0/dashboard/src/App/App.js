@@ -25,7 +25,7 @@ class App extends React.Component{
   }
   render() {
     return (
-      <>
+      <React.Fragment>
         <div id="root-notifications">
           <Notifications listNotifications={listNotifications} />
         </div>
@@ -38,7 +38,7 @@ class App extends React.Component{
           )}
           <Footer />
         </div>
-      </>
+      </React.Fragment>
     );
   }
 }
