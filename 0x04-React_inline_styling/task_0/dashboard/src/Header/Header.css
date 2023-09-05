@@ -1,0 +1,12 @@
+.App-header img {
+    width: 32vh;
+    height: 32vh;
+}
+.App-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: sans-serif;
+    color: #c4372d;
+    border-bottom: 2px solid #c4372d;
+}

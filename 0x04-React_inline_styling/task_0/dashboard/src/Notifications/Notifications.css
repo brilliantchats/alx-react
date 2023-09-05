@@ -1,0 +1,23 @@
+.Notifications {
+    padding: .5em;
+    border: 1px dotted #c4372d;
+    position: absolute;
+    display: inline-block;
+    top: 2rem;
+    right: 2rem;
+}
+.menuItem {
+    display: inline-block;
+    position: absolute;
+    top: -.3rem;
+    right: 2rem;
+}
+[data-notification-type="default"] {
+    color: blue;
+}
+[data-notification-type="urgent"] {
+    color: red;
+}
+.Notifications button {
+    cursor: pointer;
+}
