@@ -17,7 +17,7 @@ export default function CourseListRow({isHeader, textFirstCell, textSecondCell})
                 <th>{textSecondCell}</th>
               </tr>
         } else {
-            tr = <tr><th colSpan='2'>{textFirstCell}</th></tr>
+            tr = <tr style={headColor}><th colSpan='2'>{textFirstCell}</th></tr>
         }
     } else {
         tr =
