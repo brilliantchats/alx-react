@@ -1,0 +1,9 @@
+#CourseList tr {
+    border: 0.5px solid #E0E0E0;
+}
+th {
+    text-align: left;
+}
+th[colspan="2"] {
+    text-align: center;
+}
