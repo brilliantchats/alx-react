@@ -6,10 +6,12 @@ export default function Login() {
         <React.Fragment>
           <div className={css(styles.login)}>
             <p>Login to access the full dashboard</p>
-            <label htmlFor="email">Email</label>
-            <input id="email" type="email"/>
-            <label htmlFor="password">Password</label>
-            <input id="password" type="password"/>
+            <label htmlFor="email" className={css(styles.responsive)}>
+              Email<input id="email" type="email"/>
+            </label>
+            <label htmlFor="password" className={css(styles.responsive)}>
+              Password<input id="password" type="password"/>
+            </label>
             <button>OK</button>
           </div>
         </React.Fragment>
@@ -21,5 +23,10 @@ const styles = StyleSheet.create({
     minHeight: '30vh',
     paddingTop: '1.5em',
     paddingLeft: '1.5em'
+  },
+  responsive: {
+    '@media (max-width: 900px)': {
+      display: 'block'
+    }
   }
 });

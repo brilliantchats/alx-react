@@ -17,20 +17,24 @@ export default class Notifications extends React.Component{
         if (nextProps.listNotifications.length > this.props.listNotifications.length){
             return true
         }
+        if (nextProps.displayDrawer != this.props.displayDrawer){
+            return true
+        }
         return false
     }
     render() {
         return (
             <>
-            <div className={css(styles.menuItem)}>
+            <div className={css(styles.menuItem)} onClick={this.props.handleDisplayDrawer} id="menuItem">
                 <p>Your notifications</p>
             </div>
             {this.props.displayDrawer && (
-                <div className={css(styles.notifications, styles.responsive)}>
+                <div className={css(styles.notifications)}>
                     <button
                     style={{position: "absolute", right: ".5em", border: "none", cursor: "pointer"}}
                     aria-label="Close"
-                    onClick={() => console.log("Close button has been clicked")}
+                    onClick={this.props.handleHideDrawer}
+                    id="close"
                     >
                         <img src={close_icon} alt="" style={{width: "8px", height: "8px"}}/>
                     </button>
@@ -60,12 +64,16 @@ export default class Notifications extends React.Component{
 
 Notifications.defaultProps = {
     displayDrawer: false,
-    listNotifications: []
+    listNotifications: [],
+    handleDisplayDrawer: () => {},
+    handleHideDrawer: () => {}
 }
 
 Notifications.propTypes = {
     displayDrawer: PropTypes.bool,
-    listNotifications: PropTypes.arrayOf(NotificationItemShape)
+    listNotifications: PropTypes.arrayOf(NotificationItemShape),
+    handleDisplayDrawer: PropTypes.func,
+    handleHideDrawer: PropTypes.func
 }
 
 const styles = StyleSheet.create({
@@ -83,11 +91,4 @@ const styles = StyleSheet.create({
         top: '-.3rem',
         right: '2rem'
     },
-    responsive: {
-        '@media (max-width: 900px)': {
-            width: '95%',
-            height: '90%',
-            backgroundColor: 'white'
-        }
-    }
 });
